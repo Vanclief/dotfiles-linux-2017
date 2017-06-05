@@ -1,35 +1,31 @@
+#| |  / /   |  / | / / ____/ /   /  _/ ____/ ____/
+#| | / / /| | /  |/ / /   / /    / // __/ / /_
+#| |/ / ___ |/ /|  / /___/ /____/ // /___/ __/
+#|___/_/  |_/_/ |_/\____/_____/___/_____/_/
+#
+# repo  : https://github.com/vanclief/dotfiles/
 # i3 config file (v4)
-#
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
-#
-# To get a config file with the same key positions, but for your current
-# layout, use the i3-config-wizard
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:Inconsolata Medium 11, DejaVu Sans Mono 10
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
-# use these keys for focus, movement, and resize directions when reaching for
-# the arrows is not convenient
+# Movement Keys Vim Style
 set $up k
 set $down j
 set $left h
 set $right l
 
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+new_window pixel 2
+new_float pixel 2
+
+# Hide borders
+hide_edge_borders none
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
@@ -117,7 +113,6 @@ bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -129,23 +124,32 @@ bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-mode "Exit" {
-        bindsym $mod+r exec systemctl reboot
-        bindsym $mod+l exit
-        bindsym $mod+p exec systemctl poweroff
-        # Exit mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Set shutdown, restart and locking features
+bindsym $mod+0 mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
-bindsym $mod+Shift+e mode "Exit" 
 
 # Make screenshot and copy to clipboard
 bindsym $mod+Print --release exec "scrot -s ~/screen.png && xclip -selection clipboard -t image/png -i ~/screen.png"
@@ -205,12 +209,11 @@ exec_always xsetroot -solid "#333333" # set background
 exec_always xset r rate 200 40 # decrease keyboard repeat delay and increase rate
 # exec_always xrandr --dpi 120 # set DPI to make stuff readable
 
-# turn off laptop screen if external screen is available
-# exec_always xrandr | grep '^DP1\(-1\)\? connected' && xrandr --output eDP1 --off
 # turn on second monitor if available
 exec_always xrandr | grep '^DP-1 connected' && xrandr --output DP-1 --right-of LVDS-1
 exec_always xrandr | grep '^HDMI-1 connected' && xrandr --output HDMI-1 --right-of LVDS-1
 
+# ssh stuff?
 exec eval $(ssh-agent -s)
 
 # start network manager
@@ -227,5 +230,24 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screen Brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+
+# Theme
+# Polybar launch script (located ~/.config/polybar/launch.sh) 
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+
+# hide/unhide i3status bar
+bindsym $mod+m bar mode toggle
+
+# Theme colors
+# class                 border    backgr.   text      indic.    child_border
+# My colors
+client.background  $background
+
+client.focused  $foreground  $background  $foreground  $background  $background
+client.unfocused  $foreground  $background  $foreground  $background  $background
+client.focused_inactive  $foreground  $background  $foreground  $background  $background
+client.urgent        $foreground  $background  $foreground  $background  $background
+client.placeholder    $foreground  $background  $foreground  $background  $background
