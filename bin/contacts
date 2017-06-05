@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Open google contacts
+
+xdg-open 'https://contacts.google.com/u/1/preview/all' > /dev/null

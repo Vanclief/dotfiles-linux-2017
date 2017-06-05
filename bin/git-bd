@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby
+#/ Usage: git bd [<branch>]
+#/ Delete the local and remote branch
+
+def remote_tracking_branch
+  command = 'git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null'
+  tracking = chomped_system_call(command)
+
+  if tracking == '@{u}'
+    die 'Current local branch not setup to track remote branch.'
+  else
+    branch_without_remote_name(tracking)
+  end
+end
+
+def local_branch_name
+  chomped_system_call('git rev-parse --abbrev-ref HEAD')
+end
+
+def branch_without_remote_name(branch_and_remote)
+  branch = branch_and_remote.match(/origin\/(.*)/)
+
+  if branch
+    branch[1]
+  else
+    die 'Expected remote to be \'origin\''
+  end
+end
+
+def chomped_system_call(command)
+  `#{command}`.chomp
+end
+
+def checkout_master
+  `git checkout master`
+end
+
+def delete_local_branch(branch_name)
+  `git branch -D #{branch_name}`
+end
+
+def delete_remote_branch(branch_name)
+  `git push origin --delete #{branch_name}`
+end
+
+
+def main
+  branch_name = ARGV.pop
+  if branch_name
+    `git checkout #{branch_name}`
+  end
+
+  local_branch = local_branch_name
+  remote_branch = remote_tracking_branch
+
+  die('Cannot delete master') if local_branch == 'master'
+
+  checkout_master
+  delete_local_branch(local_branch)
+  delete_remote_branch(remote_branch)
+end
+
+def die(msg)
+  puts msg
+  exit 1
+end
+
+main

@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+#
+# Script to initiate (or connect to) the production servers of a rails project
+# tmux session.
+
+if [[ "$1" != "" ]]; then
+  app=$1
+  APPDIR=$HOME/src/$app
+  cd $APPDIR
+else
+  app=`echo $PWD | sed -e 's|^.*/||'`
+  APPDIR=$PWD
+fi
+export APPDIR
+SESSION=$app-prod-ssh
+
+# tmux start-server
+# tmux has-session -t $SESSION
+# if [ $? -eq 0 ]; then
+#   echo "Session $SESSION already exists.exists Attaching."
+#   sleep 1
+#   tmux attach -t $SESSION
+#   exit 0;
+# fi
+#
+
+not_in_tmux() {
+  [ -z "$TMUX" ]
+}
+
+session_exists() {
+  tmux list-sessions | sed -E 's/:.*$//' | grep -q "^$SESSION$"
+}
+
+create_detached_session() {
+  (TMUX='' tmux new-session -Ad -s "$SESSION")
+  # Setup Windows. Note `cd $APPDIR` is necessary to fire .rvmrc
+ # (TMUX='' tmux new-window -t $SESSION:1 -k -n console "zsh -ic 'cd $APPDIR;cap production rails:console'")
+  create_window 2 console 'cap production rails:console'
+  create_window 3 ssh-db 'CAP_ROLE=db cap production rails:ssh_console'
+  create_window 4 ssh-app 'CAP_ROLE=app cap production rails:ssh_console'
+  create_window 5 ssh-worker 'CAP_ROLE=worker cap production rails:ssh_console'
+}
+
+create_window() {
+  (TMUX='' tmux new-window -t $SESSION:$1 -n $2 "zsh -ic 'cd $APPDIR;$3'")
+}
+
+
+create_if_needed_and_attach() {
+  if not_in_tmux; then
+    tmux new-session -As "$SESSION"
+  else
+    if ! session_exists; then
+      create_detached_session
+    fi
+    tmux switch-client -t "$SESSION"
+  fi
+}
+
+create_if_needed_and_attach
