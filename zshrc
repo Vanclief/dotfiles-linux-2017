@@ -5,6 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 export _Z_DATA="$HOME/z-data"
 source ~/.dotfiles/z/z.sh
 
+stty erase '^?'
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
