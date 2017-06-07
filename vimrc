@@ -170,6 +170,7 @@ endif
 
 "===============================================================================
 " Ruben's changes
+"===============================================================================
 imap jj <ESC>
 imap jk <ESC>
 set relativenumber
@@ -201,6 +202,11 @@ au BufWritePre *.coffee :%s/\s\+$//e
 au BufWritePre *.ts :%s/\s\+$//e
 au BufWritePre *.py :%s/\s\+$//e
 
+"===============================================================================
+" Franco's changes
+"===============================================================================
+
+let g:notes_directories = ['~/Documents/Notes', '~/Dropbox/Notes']
 
 " ==============================================================================
 " KEYMAPPINGS
@@ -269,5 +275,3 @@ nnoremap <Leader>ra :silent exec "!rubocop -R --auto-correct %"<cr>:redraw!<cr>
 
 " open fzf in ctrlp style
 nnoremap <C-p> :Files<CR><C-w>=
-
-

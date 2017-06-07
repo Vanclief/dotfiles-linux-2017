@@ -66,6 +66,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
 
 
 if filereadable(expand("~/.vimrc.bundles.local"))
