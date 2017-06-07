@@ -1,3 +1,11 @@
+"| |  / /   |  / | / / ____/ /   /  _/ ____/ ____/
+"| | / / /| | /  |/ / /   / /    / // __/ / /_
+"| |/ / ___ |/ /|  / /___/ /____/ // /___/ __/
+"|___/_/  |_/_/ |_/\____/_____/___/_____/_/
+"
+" repo  : https://github.com/vanclief/dotfiles/
+" vimrc
+
 scriptencoding utf-8
 set encoding=utf-8
 
@@ -256,6 +264,9 @@ map <Leader>vd :vnew <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 map <Leader>q <ESC>:q!<CR>
 map <Leader>gs <ESC>:Gstatus<CR>
 map <Leader>gr <ESC>:Gread<CR>
+
+" Remap ; to :, because you never use :
+nnoremap ; :
 
 " --------------------------------------------------
 " copy and paste from clipboard
