@@ -241,7 +241,7 @@ set_from_resource   $color15     color15
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Dropbox launch
-exec --no-startup-id dropbox star
+exec --no-startup-id dropbox start
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
