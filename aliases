@@ -52,8 +52,8 @@ alias cls='clear'
 
 # because I'm to lazy to write stuff
 alias reload='source ~/.'
-alias v='nvim' #vim is dead
-alias n="nvim"
+alias v='vim'
+alias n="vim" #nvim is gone for now
 alias s="sudo"
 alias g="git"
 alias ion="ionic"
