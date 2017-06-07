@@ -188,7 +188,8 @@ mode "$mode_launcher" {
 
 # setup keyboard
 exec_always --no-startup-id "setxkbmap -layout us -variant intl -option nodeadkeys -option ctrl:nocaps"
-exec_always xsetroot -solid "#333333" # set background
+# exec_always xsetroot -solid "#333333" # set background
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/1443.jpeg # Add wallpaper
 exec_always xset r rate 200 40 # decrease keyboard repeat delay and increase rate
 # exec_always xrandr --dpi 120 # set DPI to make stuff readable
 
@@ -245,6 +246,7 @@ exec --no-startup-id dropbox start
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
+
 
 # Theme colors
 # class                 border    backgr.   text      indic.    child_border
