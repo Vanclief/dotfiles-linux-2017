@@ -25,6 +25,7 @@
   bd = !git-bd
   pullf = !git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
   ra = !rubocop_auto_correct
+  flict = diff --name-only --diff-filter=U
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
@@ -41,3 +42,5 @@
 [user]
 	email = franco.avalencia@gmail.com
 	name = Franco Valencia
+[github]
+  user = vanclief

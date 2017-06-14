@@ -88,7 +88,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -176,9 +176,14 @@ bindsym $mod+o mode "$mode_launcher"
 mode "$mode_launcher" {
     # open chrome
     bindsym w exec google-chrome --new-window --force-device-scale-factor=1.15; mode "default"
-    # open email
-    bindsym s exec google-chrome --app --new-window --force-device-scale-factor=1.15 https://brandweerrooster.slack.com/messages/general; mode "default"
-    bindsym g exec google-chrome --app --new-window --force-device-scale-factor=1.15 https://github.com/rhomeister/brandweerrooster2/; mode "default"
+    # open trello
+    bindsym t exec google-chrome --app --new-window --force-device-scale-factor=1.15 https://trello.com/b/NTadWlwY/world-domination; mode "default"
+    # open github
+    bindsym g exec google-chrome --app --new-window --force-device-scale-factor=1.15 https://github.com/rhomeister/brandweerrooster-app-v3/branches; mode "default"
+    # open franz
+    bindsym f exec franz --new-window --force-device-scale-factor=1.15; mode "default"
+    # open spotify
+    bindsym s exec spotify --new-window --force-device-scale-factor=1.15; mode "default"
 
     bindsym Esc mode "default"
     bindsym Return mode "default"
@@ -243,6 +248,10 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Dropbox launch
 exec --no-startup-id dropbox start
+
+# Albert launch 
+exec --no-startup-id albert start
+
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle

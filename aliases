@@ -3,6 +3,8 @@
 # | |/ / ___ |/ /|  / /___/ /____/ // /___/ __/
 # |___/_/  |_/_/ |_/\____/_____/___/_____/_/
 #
+# repo  : https://github.com/vanclief/dotfiles/
+# file  : aliases
 
 # Dutch aliases
 alias -g CA="2>&1 | cat -A"
@@ -46,7 +48,7 @@ alias ss='spring stop'
 alias untar='tar xvfz'
 alias v="$VISUAL"
 
-# incase i forget how to clear
+# In case I forget how to clear
 alias c='clear'
 alias cls='clear'
 
@@ -57,9 +59,7 @@ alias n="vim" #nvim is gone for now
 alias s="sudo"
 alias g="git"
 alias ion="ionic"
-alias yarn i="yarn install"
-
-# Python stuff
+alias yi="yarn install --ignore-engines"
 alias py="python"
 alias py3="python3"
 alias actenv=". venv/bin/activate"
