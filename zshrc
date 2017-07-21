@@ -1,11 +1,16 @@
 export TERM=xterm-256color
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Rupa Z jump
 export _Z_DATA="$HOME/z-data"
 source ~/.dotfiles/z/z.sh
 
-stty erase '^?'
+# Base16 Manager
+export PATH=$HOME/base16-manager/
+
+# stty erase '^?'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -135,7 +140,7 @@ _load_settings "$HOME/.zsh/configs"
 
 [[ -f ~/.aliases ]] && source ~/.aliases
 
-DEFAULT_USER=rs06r
+DEFAULT_USER=vanclief
 
 eval `dircolors $HOME/.dircolors`
 
@@ -143,10 +148,8 @@ eval `dircolors $HOME/.dircolors`
 
 export ANDROID_HOME=/usr/local/android-sdk-linux
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-export NXJ_HOME=/home/rs06r/Downloads/temp/leJOS_NXJ_0.9.1beta-3
 
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$NXJ_HOME/bin
 export PATH=$HOME/anaconda3/bin:$PATH
 
 SAVEHIST=HISTSIZE=20000

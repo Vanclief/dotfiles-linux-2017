@@ -48,6 +48,9 @@ alias ss='spring stop'
 alias untar='tar xvfz'
 alias v="$VISUAL"
 
+# Arch alias
+alias yogurt="yaourt" # Fun way to remember yaourt command
+
 # In case I forget how to clear
 alias c='clear'
 alias cls='clear'
