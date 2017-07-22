@@ -8,7 +8,11 @@ export _Z_DATA="$HOME/z-data"
 source ~/.dotfiles/z/z.sh
 
 # Base16 Manager
-export PATH=$HOME/base16-manager/
+export PATH=$PATH:~/.dotfiles/base16-manager
+
+if [[ "$(tty)" == '/dev/tty1'  ]]; then
+    exec startx
+fi
 
 # stty erase '^?'
 
@@ -66,9 +70,6 @@ ZSH_THEME="agnoster"
 plugins=(autojump web-search command-not-found)
 
 # User configuration
-
-export PATH=".git/safe/../../bin:/home/ruben/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -145,12 +146,6 @@ DEFAULT_USER=vanclief
 eval `dircolors $HOME/.dircolors`
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-export ANDROID_HOME=/usr/local/android-sdk-linux
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH=$HOME/anaconda3/bin:$PATH
 
 SAVEHIST=HISTSIZE=20000
 
