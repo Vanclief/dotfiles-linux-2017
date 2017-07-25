@@ -1,4 +1,4 @@
-export TERM=xterm-256color
+export TERM=rxvt-unicode
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -11,7 +11,7 @@ source ~/.dotfiles/z/z.sh
 export PATH=$PATH:~/.dotfiles/base16-manager
 
 if [[ "$(tty)" == '/dev/tty1'  ]]; then
-    exec startx
+    exec ssh-agent startx
 fi
 
 # stty erase '^?'

@@ -3,9 +3,11 @@
 # | |/ / ___ |/ /|  / /___/ /____/ // /___/ __/
 # |___/_/  |_/_/ |_/\____/_____/___/_____/_/
 #
+# repo  : https://github.com/vanclief/dotfiles/
 # i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+set $mod Mod4
 
 # Movement Keys Vim Style
 set $up k
@@ -13,11 +15,8 @@ set $down j
 set $left h
 set $right l
 
-# Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod4
-
 # Set Font
-font pango:DejaVu Sans Mono 11
+font pango:DejaVu Sans Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -72,10 +71,9 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-#floating_modifier Mod1
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -84,6 +82,14 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 bindsym $mod+n exec ~/.config/i3/scripts/rename
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
@@ -114,23 +120,19 @@ bindsym $mod+Shift+s exec ~/arch/i3scripts/./screen.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# setup keyboard
-exec_always --no-startup-id "setxkbmap -layout us -variant intl -option nodeadkeys -option ctrl:nocaps"
-
 # Apps and stuff
-bindsym $mod+p exec qutebrowser
-bindsym $mod4+1 exec --no-startup-id google-chrome-stable
-bindsym $mod+y exec --no-startup-id firefox --new-window https://www.youtube.com
-bindsym $mod+Shit+y floating toggle 
-#bindsym $mod+Shit+y floating enable geometry {"x": 0, "y": 0, "width": 150, "height": 150 }
+# bindsym $mod4+1 exec --no-startup-id google-chrome-stable
+# bindsym $mod+y exec --no-startup-id firefox --new-window https://www.youtube.com
 bindsym $mod4+l exec --no-startup-id lock -f Hack-Regular -t "Go away ath" -- scrot -z
 bindsym $mod4+0 exec scrot
-bindsym $mod4+9 exec ~/.config/i3/scripts/screenshot
+# bindsym $mod4+9 exec ~/.config/i3/scripts/screenshot
 
 bindsym $mod+r mode "resize"
 
@@ -160,7 +162,7 @@ mode "resize" {
 
 bar {
     strip_workspace_numbers no
-    status_command i3blocks -c ~/.dotfiles/i3/i3blocks.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
     colors {
         # Gruvbox
@@ -195,19 +197,21 @@ client.focused_inactive #1B3600 #1B3600 #888888 #FFFFFF
 client.unfocused #333333 #333333 #888888 #FFFFFF
 client.urgent #C20000 #C20000 #FFFFFF #FFFFFF
 
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+for_window [class="^.*"] border pixel 2
+gaps inner 16
+gaps outer 10
 
-# Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec light -A 1
+bindsym XF86MonBrightnessDown exec light -U 1
 
-# Screen Brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+# Volume controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+
+# Keyboard backlight
+bindsym XF86KbdBrightnessDown exec --no-startup-id kb-light -
+bindsym XF86KbdBrightnessUp exec --no-startup-id kb-light +
 
 # Start dunst
-exec --no-startup-id dunst -config /home/markl/.config/dunst/dunstrc
+exec --no-startup-id dunst -config /home/markl/.config/dunst/dunstrcgg

@@ -185,9 +185,10 @@ set relativenumber
 "color Tomorrow-Night-Bright
 set lazyredraw
 set complete-=i
+
 "syntax enable
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
 " situations.
