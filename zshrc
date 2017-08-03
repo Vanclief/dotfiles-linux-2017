@@ -7,9 +7,6 @@ export ZSH=$HOME/.oh-my-zsh
 export _Z_DATA="$HOME/z-data"
 source ~/.dotfiles/z/z.sh
 
-# Base16 Manager
-export PATH=$PATH:~/.dotfiles/base16-manager
-
 if [[ "$(tty)" == '/dev/tty1'  ]]; then
     exec ssh-agent startx
 fi
@@ -23,7 +20,7 @@ fi
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
 
-#ZSH_TMUX_AUTOSTART="true"
+# ZSH_TMUX_AUTOSTART="true"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
