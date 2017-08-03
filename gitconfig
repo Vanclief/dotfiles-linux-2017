@@ -40,7 +40,7 @@
 [include]
   path = ~/.gitconfig.local
 [user]
-	email = franco.avalencia@gmail.com
-	name = Franco Valencia
+  email = franco.avalencia@gmail.com
+  name = Franco Valencia
 [github]
   user = vanclief
