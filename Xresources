@@ -1,4 +1,12 @@
+!| |  / /   |  / | / / ____/ /   /  _/ ____/ ____/
+!| | / / /| | /  |/ / /   / /    / // __/ / /_
+!| |/ / ___ |/ /|  / /___/ /____/ // /___/ __/
+!|___/_/  |_/_/ |_/\____/_____/___/_____/_/
 !
+! repo  : https://github.com/vanclief/dotfiles/
+! file  : Xresources
+
+
 ! Xft.dpi: 180
 Xft.autohint: 0
 Xft.lcddefault: lcddefault
