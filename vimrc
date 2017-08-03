@@ -187,7 +187,7 @@ set lazyredraw
 set complete-=i
 
 "syntax enable
-set background=dark
+" set background=dark
 colorscheme gruvbox
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
