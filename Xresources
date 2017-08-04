@@ -42,7 +42,6 @@ URxvt*scrollTtyKeypress: true
 
 !! Fonts
 #define fonts xft:Hack:size=12:antialias=true,\
-               xft:Symbola:antialias=false,\
                xft:Inconsolata\ for\ Powerline:pixelsize=12
 
 URxvt*font:              fonts
@@ -82,7 +81,7 @@ rofi.opacity: 80
 /* Rofi */
 #define r_bg   #1d2021
 #define r_fg   #ebdbb2
-#define r_hlfg #d65d0e
+#define r_hlfg #cc241d
 
 ! States: bg, fg, bgalt, hlbg, hlfg
 rofi.color-enabled: true
