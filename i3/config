@@ -165,13 +165,19 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+#Disable headers
+new_window pixel 1
+bindsym mod+x toggle border
+
+hide_edge_borders smart
+
 bar {
     strip_workspace_numbers no
     status_command i3blocks -c ~/.dotfiles/i3/i3blocks.conf
 
     colors {
         # Gruvbox
-        separator #928374
+        separator #282828
         background #282828
         statusline #ebdbb2
         focused_workspace #cc241d #cc241d #282828
