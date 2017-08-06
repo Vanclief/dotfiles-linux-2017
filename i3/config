@@ -84,7 +84,7 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+c focus child
 
-bindsym $mod+n exec ~/.dotfiles/i3/scripts/rename
+# bindsym $mod+n exec ~/.dotfiles/i3/scripts/rename
 
 #Scratchapd
 bindsym $mod+minus scratchpad show
@@ -195,18 +195,18 @@ client.unfocused #32302f #32302f #928374 #282828
 client.urgent #d79921 #d79921 #ebdbb2 #282828
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0
-bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send ''
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send ''
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle; exec notify-send ''
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym $mod+m exec playerctl play-pause; exec notify-send ' / '
+bindsym $mod+b exec playerctl previous; exec notify-send ''
+bindsym $mod+n exec playerctl next; exec notify-send ''
 
 # Screen Brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send ''"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send ''"
 
 # Start dunst
 exec --no-startup-id dunst -config /home/vanclief/.dunst/dunstrc
