@@ -8,9 +8,9 @@ if [[ $status == *'Discharging'* ]]; then
   elif [[ $percent > 25 ]]; then
     echo " $percent%";
   elif [[ $percent > 5 ]]; then
-    echo " $percent%";
-  else
     echo " $percent%";
+  else
+    echo " $percent%";
   fi
 elif [[ $status == *'Charging'* ]]; then
   echo "  $percent%";

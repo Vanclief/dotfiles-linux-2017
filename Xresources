@@ -88,6 +88,7 @@ rofi.color-enabled: true
 rofi.color-normal: r_bg,r_fg,#282828,r_bg,r_hlfg
 rofi.color-urgent: r_bg,#fb4934,#282828,r_bg,r_hlfg
 rofi.color-active: r_bg,r_fg,#282828,r_bg,#fe8019
+
 ! states: background, border
 rofi.color-window: r_bg,#d5c4a1
 
