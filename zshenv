@@ -28,4 +28,3 @@ fi
 
 unset _old_path
 
-# source "$HOME/.rvm/scripts/rvm"
