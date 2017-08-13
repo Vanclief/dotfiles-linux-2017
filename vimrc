@@ -188,7 +188,7 @@ set complete-=i
 
 "syntax enable
 " set background=dark
-colorscheme gruvbox
+colorscheme solarized
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
 " situations.

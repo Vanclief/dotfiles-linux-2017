@@ -29,7 +29,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start rofi (a program launcher)
+# Start rofi (Program launcher like Alfred)
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Shift+d exec --no-startup-id rofi -show window
 
@@ -39,23 +39,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 # bindsym $mod+minus split h
@@ -115,7 +103,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 
-bindsym $mod+Shift+s exec ~/arch/i3scripts/./screen.sh
+bindsym $mod+Shift+s exec ~/.dotfiles/i3/scripts/monitor
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -195,8 +183,8 @@ client.unfocused #32302f #32302f #928374 #282828
 client.urgent #d79921 #d79921 #ebdbb2 #282828
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send ''
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send ''
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send ' +'
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send ' -'
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle; exec notify-send ''
 
 # Media player controls
@@ -210,3 +198,6 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send ''"
 
 # Start dunst
 exec --no-startup-id dunst -config /home/vanclief/.dunst/dunstrc
+
+# Start network manager
+exec --no-startup-id nm-applet
