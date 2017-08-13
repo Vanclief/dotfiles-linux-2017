@@ -79,9 +79,9 @@ rofi.opacity: 80
 
 
 /* Rofi */
-#define r_bg   #1d2021
-#define r_fg   #ebdbb2
-#define r_hlfg #cc241d
+#define r_bg   #002b36
+#define r_fg   #586e75 
+#define r_hlfg #b58900
 
 ! States: bg, fg, bgalt, hlbg, hlfg
 rofi.color-enabled: true

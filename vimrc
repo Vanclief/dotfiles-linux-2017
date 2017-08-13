@@ -186,8 +186,10 @@ set relativenumber
 set lazyredraw
 set complete-=i
 
-"syntax enable
-" set background=dark
+set background=dark
+syntax enable
+let g:solarized_termcolors = 16
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 " Don't wait so long for the next keypress (particularly in ambigious Leader
@@ -224,6 +226,8 @@ nnoremap Q <nop>
 " Quick movement
 nnoremap J 5j
 nnoremap K 5k
+
+let g:airline_theme='solarized'
 
 " ==============================================================================
 " KEYMAPPINGS

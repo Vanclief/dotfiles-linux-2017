@@ -131,26 +131,26 @@ bindsym $mod+r mode "resize"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+  bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+# same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+# back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 #Disable headers
@@ -160,27 +160,40 @@ bindsym mod+x toggle border
 hide_edge_borders smart
 
 bar {
-    strip_workspace_numbers no
+  strip_workspace_numbers no
     status_command i3blocks -c ~/.dotfiles/i3/i3blocks.conf
 
     colors {
-        # Gruvbox
-        separator #282828
-        background #282828
-        statusline #ebdbb2
-        focused_workspace #cc241d #cc241d #282828
-        active_workspace #1d2021 #1d2021 #928374
-        inactive_workspace #32302f #32302f #928374
-        urgent_workspace #cc241d #cc241d #ebdbb2
+      separator          #161615
+        background         #020202
+        statusline         #111111
 
-   }
+        # Bar colors       border    background    text 
+        focused_workspace  #07090d   #020202       #5E468C
+        active_workspace   #07090d   #020202       #268bd2
+        inactive_workspace #07090d   #020202       #899CA1
+        urgent_workspace   #07090d   #020202       #287373
+# Colors
+# separator #282828
+# background #282828
+# statusline #ebdbb2
+# focused_workspace #b58900 #b58900 #282828
+# active_workspace #1d2021 #1d2021 #928374
+# inactive_workspace #32302f #32302f #928374
+# urgent_workspace #cc241d #cc241d #ebdbb2
+
+    }
 }
 
-# Gruvbox
-client.focused #cc241d #cc241d #282828 #282828
-client.focused_inactive #32302f #32302f #928374 #282828
-client.unfocused #32302f #32302f #928374 #282828
-client.urgent #d79921 #d79921 #ebdbb2 #282828
+# Colors
+# client.focused #b58900 #b58900 #cc241d #282828 #282828
+# client.focused_inactive #32302f #32302f #928374 #282828
+# client.unfocused #32302f #32302f #928374 #282828
+# client.urgent #d79921 #d79921 #ebdbb2 #282828
+client.focused            $white      $white       $black          $white       $white
+client.focused_inactive   $darkblack  $darkblack   $blue           $darkblack  $darkblack
+client.unfocused          $darkblack  $darkblack   $blue           $darkblack  $darkblack
+client.urgent             $darkblack  $darkblack   $blue           $darkblack  $darkblack
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send ' +'
