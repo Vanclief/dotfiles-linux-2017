@@ -164,8 +164,8 @@ bar {
     status_command i3blocks -c ~/.dotfiles/i3/i3blocks.conf
 
     colors {
-      separator          #161615
-        background         #020202
+        separator          #002b36
+        background         #002b36
         statusline         #111111
 
         # Bar colors       border    background    text 
@@ -173,23 +173,10 @@ bar {
         active_workspace   #07090d   #020202       #268bd2
         inactive_workspace #07090d   #020202       #899CA1
         urgent_workspace   #07090d   #020202       #287373
-# Colors
-# separator #282828
-# background #282828
-# statusline #ebdbb2
-# focused_workspace #b58900 #b58900 #282828
-# active_workspace #1d2021 #1d2021 #928374
-# inactive_workspace #32302f #32302f #928374
-# urgent_workspace #cc241d #cc241d #ebdbb2
-
     }
 }
 
 # Colors
-# client.focused #b58900 #b58900 #cc241d #282828 #282828
-# client.focused_inactive #32302f #32302f #928374 #282828
-# client.unfocused #32302f #32302f #928374 #282828
-# client.urgent #d79921 #d79921 #ebdbb2 #282828
 client.focused            $white      $white       $black          $white       $white
 client.focused_inactive   $darkblack  $darkblack   $blue           $darkblack  $darkblack
 client.unfocused          $darkblack  $darkblack   $blue           $darkblack  $darkblack
