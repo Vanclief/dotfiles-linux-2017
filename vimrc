@@ -218,7 +218,7 @@ au BufWritePre *.py :%s/\s\+$//e
 "===============================================================================
 
 " Set vim notes directory
-let g:notes_directories = ['~/Documents/Notes', '~/Dropbox/Notes']
+let g:notes_directories = ['~/Dropbox/Notes']
 
 " No need for ex mode 
 nnoremap Q <nop>
