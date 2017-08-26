@@ -76,3 +76,8 @@ function fixSSH(){
   eval $(ssh-agent);
   ssh-add
 }
+
+function fixDropbox(){
+  sudo sysctl fs.inotify.max_user_instances=256
+  sudo sysctl fs.inotify.max_user_watches=1048576
+}
