@@ -72,9 +72,14 @@ function gif(){
 --delay=3 > $3
 }
 
-function fixSSH(){
+function fixGIT(){
   eval $(ssh-agent);
   ssh-add
+}
+
+function fixSSH(){
+  eval $(ssh-agent);
+  ssh-add /home/vanclief/.ssh/id_rsa2
 }
 
 function fixDropbox(){
