@@ -66,20 +66,16 @@ alias yi="yarn install --ignore-engines"
 alias py="python"
 alias py3="python3"
 alias actenv=". venv/bin/activate"
+alias xcopy ="xclip -sel clip"
 
 function gif(){
   ffmpeg -i $1 -vf scale=$2:-1:flags=lanczos -f gif - | gifsicle --optimize=3
 --delay=3 > $3
 }
 
-function fixGIT(){
-  eval $(ssh-agent);
-  ssh-add
-}
-
 function fixSSH(){
   eval $(ssh-agent);
-  ssh-add /home/vanclief/.ssh/id_rsa2
+  ssh-add
 }
 
 function fixDropbox(){
