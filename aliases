@@ -44,7 +44,6 @@ alias rc='rails c'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 alias ss='spring stop'
 alias untar='tar xvfz'
-alias v="$VISUAL"
 
 ####################
 # Franco's section #
@@ -58,7 +57,7 @@ alias c='clear'
 alias cls='clear'
 alias reload='source ~/.'
 alias v='vim'
-alias n="vim" #nvim is gone for now
+alias n="nvim"
 alias s="sudo"
 alias g="git"
 alias ion="ionic"
