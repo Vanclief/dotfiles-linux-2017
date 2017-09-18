@@ -225,7 +225,7 @@ else
   "===============================================================================
 
   " Set vim notes directory
-  let g:notes_directories = ['~/Dropbox/Notes']
+  let g:notes_directories = ['~/.notes']
 
   " No need for ex mode 
   nnoremap Q <nop>
