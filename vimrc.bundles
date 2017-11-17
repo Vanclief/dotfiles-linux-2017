@@ -72,6 +72,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'elmcast/elm-vim'
+Plug 'fatih/vim-go'
 
 
 if filereadable(expand("~/.vimrc.bundles.local"))
