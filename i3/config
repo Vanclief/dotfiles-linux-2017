@@ -183,8 +183,8 @@ client.unfocused          $darkblack  $darkblack   $blue           $darkblack  $
 client.urgent             $darkblack  $darkblack   $blue           $darkblack  $darkblack
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send ' +'
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send ' -'
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send 'Volume ++'
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pactl set-sink-mute @DEFAULT_SINK@ 0; exec notify-send 'Volume --'
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle; exec notify-send ''
 
 # Media player controls
@@ -193,8 +193,8 @@ bindsym $mod+b exec playerctl previous; exec notify-send ''
 bindsym $mod+n exec playerctl next; exec notify-send ''
 
 # Screen Brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send ''"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send ''"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'Brightness ++'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'Brightness --'"
 
 # Start dunst
 exec --no-startup-id dunst -config /home/vanclief/.dunst/dunstrc
