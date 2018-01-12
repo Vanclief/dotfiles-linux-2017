@@ -9,6 +9,12 @@ Requirements
 
 * i3
 
+* vim
+
+* Oh-My-Zsh (curl -L http://install.ohmyz.sh | sh)
+
+* z (https://github.com/rupa/z/blob/master/z.sh)
+
 
 Install
 -------
@@ -16,11 +22,20 @@ Install
 Clone onto your system:
 
     git clone git://github.com/vanclief/dotfiles.git ~/.dotfiles
+    
+Install yaourt
+    ` ` ` 
+    sudo vim /etc/pacman.conf
+    ` ` `
+    ` ` `
+    [archlinuxfr]
+    SigLevel = Never
+    Server = http://repo.archlinux.fr/$arch
+    ` ` `
 
 Install [rcm](https://github.com/thoughtbot/rcm):
 
-    brew tap thoughtbot/formulae
-    brew install rcm
+    yaourt -Sy rcm
 
 Install the dotfiles:
 
