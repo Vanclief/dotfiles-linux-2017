@@ -3,7 +3,7 @@
 # | |/ / ___ |/ /|  / /___/ /____/ // /___/ __/
 # |___/_/  |_/_/ |_/\____/_____/___/_____/_/
 #
-# i3 config file (v4)
+# i3 config file (v5)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -201,3 +201,6 @@ exec --no-startup-id dunst -config /home/vanclief/.dunst/dunstrc
 
 # Start network manager
 exec --no-startup-id nm-applet
+
+# For Budapest, place monitors where they belong
+exec xrandr --output DVI-D-1 --auto --right-of HDMI-2
