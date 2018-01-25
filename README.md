@@ -1,6 +1,8 @@
 Vanclief dotfiles
 ===================
 
+![cool picture](https://imgur.com/NnbeU2M)
+
 Dotfiles for zsh, i3 and tmux+vim. Running under Arch Linux. Should work with other
 distros.
 
