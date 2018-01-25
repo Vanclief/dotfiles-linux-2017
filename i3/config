@@ -112,7 +112,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # take screenshot
-bindsym $mod+Shift+r exec "deepin-screenshot"
+bindsym $mod+Shift+p exec "'deepin-screenshot'"
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -123,9 +123,8 @@ exec_always --no-startup-id "setxkbmap -layout us -variant intl -option nodeadke
 # Apps and stuff
 bindsym $mod+p exec qutebrowser
 # bindsym $mod4+1 exec --no-startup-id google-chrome-stable
+#
 bindsym $mod+y exec --no-startup-id firefox --new-window https://www.youtube.com
-# bindsym $mod+Shit+y floating toggle 
-#bindsym $mod+Shit+y floating enable geometry {"x": 0, "y": 0, "width": 150, "height": 150 }
 # bindsym $mod4+l exec --no-startup-id lock -f Hack-Regular -t "Go away ath" -- scrot -z
 # bindsym $mod4+0 exec scrot
 # bindsym $mod4+9 exec ~/.dotfiles/i3/scripts/screenshot
@@ -191,9 +190,9 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%; exec
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle; exec notify-send ''
 
 # Media player controls
-bindsym $mod+m exec playerctl play-pause; exec notify-send ' / '
-bindsym $mod+b exec playerctl previous; exec notify-send ''
-bindsym $mod+n exec playerctl next; exec notify-send ''
+bindsym $mod+m exec playerctl play-pause; exec notify-send 'Play / Pause'
+bindsym $mod+b exec playerctl previous; exec notify-send 'Prev'
+bindsym $mod+n exec playerctl next; exec notify-send 'Next'
 
 # Screen Brightness controls
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'Brightness ++'"
