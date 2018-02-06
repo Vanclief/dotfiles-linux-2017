@@ -142,6 +142,7 @@ else
 
   " Run commands that require an interactive shell
   nnoremap <Leader>r :RunInInteractiveShell<space>
+
   " Run python
   nnoremap <Leader>rp :call Send_to_Tmux("python ".expand('%:p')."\n")<cr>
   map <Leader>tl :call Send_to_Tmux(getline('.')."\n")<cr>
@@ -183,12 +184,13 @@ else
     source ~/.vimrc.local
   endif
 
-  "===============================================================================
-  " Ruben's changes
-  "===============================================================================
+  " ===============================================================================
+  " Settings stolen from a Dutch guy
+  " ===============================================================================
   imap jj <ESC>
   imap jk <ESC>
   set relativenumber
+
   "color Tomorrow-Night-Bright
   set lazyredraw
   set complete-=i
@@ -220,19 +222,12 @@ else
   au BufWritePre *.ts :%s/\s\+$//e
   au BufWritePre *.py :%s/\s\+$//e
 
-  "===============================================================================
-  " Franco's changes
-  "===============================================================================
-
-  " Set vim notes directory
-  let g:notes_directories = ['~/.notes']
+  " ===============================================================================
+  " Tweaks
+  " ===============================================================================
 
   " No need for ex mode 
   nnoremap Q <nop>
-
-  " Quick movement
-  nnoremap J 5j
-  nnoremap K 5k
 
   let g:airline_theme='solarized'
 
@@ -261,14 +256,6 @@ else
   nmap <Leader>i mmgg=G`m<cr>
 
   nmap <Leader>gr :Qfdo %s/find/replace/g
-
-  " Ruby related
-  map <Leader>bb :!bundle install<cr>
-  map <Leader>sc :Scontroller<cr>
-  map <Leader>sm :Smodel<cr>
-  map <Leader>st :AS<cr>
-  map <Leader>sv :Sview show<cr>
-  map <Leader>ac :sp app/controllers/application_controller.rb<cr>
 
   map <Leader>mi :!bin/rake db:migrate<cr>
 
@@ -299,6 +286,7 @@ else
   nnoremap <Leader>p "+p
   set pastetoggle=<F2>
   nnoremap <Leader>P "+P
+
   " entire file
   nnoremap <Leader>fy :%y+<cr>
 
