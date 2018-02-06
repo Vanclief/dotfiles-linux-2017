@@ -87,6 +87,6 @@ ensure_tmux_is_running
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Anaconda3 PATH
-export PATH="/home/vanclief/anaconda3/bin:$PATH"
+export PATH="$PATH:$HOME/anaconda3/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
