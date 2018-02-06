@@ -86,4 +86,7 @@ ensure_tmux_is_running
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
+# Anaconda3 PATH
+export PATH="/home/vanclief/anaconda3/bin:$PATH"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
