@@ -71,6 +71,7 @@ alias chromeNoCORS="google-chrome-stable --disable-web-security --user-data-dir"
 alias fixWatcher="echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p"
 alias yaourtNoChecks="yaourt --m-arg --skipchecksums --m-arg --skippgpcheck -Sb"
 alias vpnCali="systemctl start openvpn-client@US-California"
+alias lock="betterlockscreen -l"
 
 function gif(){
   ffmpeg -i $1 -vf scale=$2:-1:flags=lanczos -f gif - | gifsicle --optimize=3
