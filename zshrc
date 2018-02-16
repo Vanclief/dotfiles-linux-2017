@@ -89,4 +89,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Anaconda3 PATH
 export PATH="$PATH:$HOME/anaconda3/bin"
 
+# GOPATH Export
+export PATH="$PATH:$GOPATH/bin"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
