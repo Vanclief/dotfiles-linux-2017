@@ -34,7 +34,6 @@ Plug 'janko-m/vim-test'
 Plug 'kchmck/vim-coffee-script'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/syntastic'
-"Plug 'slim-template/vim-slim'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-dispatch'
 Plug 'jgdavey/tslime.vim'
@@ -63,17 +62,18 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
-" Plug 'jason0x43/vim-js-indent'
 Plug 'pangloss/vim-javascript'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go'
 Plug 'lervag/vimtex'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'junegunn/goyo.vim'  "Distraction-free writing in Vim
 
 
 if filereadable(expand("~/.vimrc.bundles.local"))
