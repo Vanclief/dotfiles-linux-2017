@@ -92,4 +92,7 @@ export PATH="$PATH:$HOME/anaconda3/bin"
 # GOPATH Export
 export PATH="$PATH:$GOPATH/bin"
 
+# Android studio
+export ANDROID_HOME=/opt/android-sdk
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
