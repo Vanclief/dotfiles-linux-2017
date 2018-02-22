@@ -240,6 +240,8 @@ nnoremap Q <nop>
 
 let g:airline_theme='solarized'
 
+hi SpellBad cterm=underline ctermfg=red
+
 " ==============================================================================
 " KEYMAPPINGS
 " ==============================================================================
