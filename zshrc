@@ -95,4 +95,7 @@ export PATH="$PATH:$GOPATH/bin"
 # Android studio
 export ANDROID_HOME=/home/vanclief/Android/Sdk
 
+# Java PATH
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
