@@ -90,6 +90,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/anaconda3/bin"
 
 # GOPATH Export
+export GOPATH=/home/vanclief/go
 export PATH="$PATH:$GOPATH/bin"
 
 # Android studio
