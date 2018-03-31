@@ -13,7 +13,7 @@ xrdb merge ~/.Xresources
 
 # Set up background and wallpaper
 xsetroot -solid "#3E5059"
-feh --bg-fill ~/Backgrounds/bkg.png
+feh --bg-max ~/Backgrounds/bkg.png
 
 # Start dropbox
 /usr/bin/dropbox &
