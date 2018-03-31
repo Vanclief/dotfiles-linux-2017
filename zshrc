@@ -19,7 +19,7 @@ ZSH_THEME="agnoster"
 # ZSH_TMUX_AUTOSTART="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(web-search command-not-found)
+plugins=(web-search command-not-found, ssh-agent)
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
