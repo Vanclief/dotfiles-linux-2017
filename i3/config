@@ -4,8 +4,6 @@
 # |___/_/  |_/_/ |_/\____/_____/___/_____/_/
 #
 # i3 config file (v5)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Movement Keys Vim Style
 set $up k
@@ -121,10 +119,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 exec_always --no-startup-id "setxkbmap -layout us -variant intl -option nodeadkeys -option ctrl:nocaps"
 
 # Apps and stuff
-bindsym $mod+p exec qutebrowser
+# bindsym $mod+p exec qutebrowser
+bindsym $mod+g exec --no-startup-id chromium
 # bindsym $mod4+1 exec --no-startup-id google-chrome-stable
-#
-bindsym $mod+y exec --no-startup-id firefox --new-window https://www.youtube.com
 # bindsym $mod4+l exec --no-startup-id lock -f Hack-Regular -t "Go away ath" -- scrot -z
 # bindsym $mod4+0 exec scrot
 # bindsym $mod4+9 exec ~/.dotfiles/i3/scripts/screenshot
