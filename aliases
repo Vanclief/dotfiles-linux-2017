@@ -73,6 +73,9 @@ alias yaourtNoChecks="yaourt --m-arg --skipchecksums --m-arg --skippgpcheck -Sb"
 alias vpnCali="systemctl start openvpn-client@US-California"
 alias lock="betterlockscreen -l"
 
+alias dclear='docker rm $(docker ps -aq)'
+
+
 function gif(){
   ffmpeg -i $1 -vf scale=$2:-1:flags=lanczos -f gif - | gifsicle --optimize=3
 --delay=3 > $3
