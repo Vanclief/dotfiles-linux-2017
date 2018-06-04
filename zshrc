@@ -77,14 +77,10 @@ DEFAULT_USER=vanclief
 
 eval `dircolors $HOME/.dircolors`
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 SAVEHIST=HISTSIZE=20000
 
 ensure_tmux_is_running
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 
 # Anaconda3 PATH
 export PATH="$PATH:$HOME/anaconda3/bin"
@@ -98,5 +94,9 @@ export ANDROID_HOME=/home/vanclief/Android/Sdk
 
 # Java PATH
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+[ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
