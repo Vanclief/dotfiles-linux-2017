@@ -95,6 +95,10 @@ export ANDROID_HOME=/home/vanclief/Android/Sdk
 # Java PATH
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 [ -s ${HOME}/.rvm/scripts/rvm ] && source ${HOME}/.rvm/scripts/rvm
