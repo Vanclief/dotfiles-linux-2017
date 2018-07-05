@@ -95,6 +95,9 @@ export ANDROID_HOME=/home/vanclief/Android/Sdk
 # Java PATH
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 
+# Yarn
+export PATH="$PATH:$(yarn global bin)"
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
