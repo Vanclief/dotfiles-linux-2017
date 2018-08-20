@@ -28,6 +28,7 @@
   pullf = !git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
   ra = !rubocop_auto_correct
   flict = diff --name-only --diff-filter=U
+  mapf = git merge && git push --force-with-lease 
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
