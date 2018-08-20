@@ -72,8 +72,7 @@ Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go'
 Plug 'lervag/vimtex'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'junegunn/goyo.vim'  "Distraction-free writing in Vim
+Plug 'posva/vim-vue'
 
 
 if filereadable(expand("~/.vimrc.bundles.local"))
