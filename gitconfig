@@ -29,7 +29,7 @@
   ra = !rubocop_auto_correct
   flict = diff --name-only --diff-filter=U
   pup = !git checkout production && git pull && git checkout -
-  sup = !git checkout production && git pull && git checkout -
+  sup = !git checkout staging && git pull && git checkout -
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
