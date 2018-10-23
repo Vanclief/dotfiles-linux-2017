@@ -72,8 +72,8 @@ alias fixWatcher="echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sys
 alias yaourtNoChecks="yaourt --m-arg --skipchecksums --m-arg --skippgpcheck -Sb"
 alias vpnCali="systemctl start openvpn-client@US-California"
 alias lock="betterlockscreen -l"
-
 alias dclear='docker rm $(docker ps -aq)'
+alias k8='kubectl'
 
 
 function gif(){
