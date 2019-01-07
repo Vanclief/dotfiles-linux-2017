@@ -73,7 +73,7 @@ Plug 'fatih/vim-go'
 Plug 'lervag/vimtex'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'posva/vim-vue'
-
+Plug 'mxw/vim-jsx'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
