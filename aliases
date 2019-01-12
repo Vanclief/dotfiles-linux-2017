@@ -36,11 +36,6 @@ alias ln="ln -v"
 alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
 alias mkdir="mkdir -p"
 alias path='echo $PATH | tr -s ":" "\n"'
-alias prc="cap production rails:console"
-alias prd="cap production deploy"
-alias rs='rails s -b 0.0.0.0'
-alias rsu='bundle exec unicorn --config config/unicorn.rb'
-alias rc='rails c'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 alias untar='tar xvfz'
 
