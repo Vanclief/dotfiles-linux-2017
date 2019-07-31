@@ -15,9 +15,6 @@ xrdb merge ~/.Xresources
 xsetroot -solid "#3E5059"
 feh --bg-max ~/Backgrounds/bkg.png
 
-# Start dropbox
-/usr/bin/dropbox &
-
 # Start i3
 exec i3
 
