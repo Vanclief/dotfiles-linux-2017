@@ -72,6 +72,11 @@ alias term='urxvt &'
 alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
+# Kubernetes
+alias podlist='kubectl get pods -n $CLUSTER --insecure-skip-tls-verify'
+alias podlogs='kubectl logs -fn $CLUSTER $POD --insecure-skip-tls-verify'
+alias podkill='kubectl delete po -n $CLUSTER $POD --insecure-skip-tls-verify'
+alias podport='kubectl port-forward -n $CLUSTER $POD $PORT --insecure-skip-tls-verify'
 
 function gif(){
   ffmpeg -i $1 -vf scale=$2:-1:flags=lanczos -f gif - | gifsicle --optimize=3
