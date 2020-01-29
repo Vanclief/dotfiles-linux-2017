@@ -48,3 +48,5 @@
   name = Franco Valencia
 [github]
   user = vanclief
+[url "https://cacaobot:Lxe2PucWjvqThMabWJho@gitlab.com/monedacacao/go-cacao-common"]
+	insteadOf = https://gitlab.com/monedacacao/go-cacao-common

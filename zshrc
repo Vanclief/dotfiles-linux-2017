@@ -1,4 +1,4 @@
-export TERM=rxvt-unicode
+# export TERM=rxvt-unicode
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -19,7 +19,7 @@ ZSH_THEME="agnoster"
 # ZSH_TMUX_AUTOSTART="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(web-search command-not-found, ssh-agent)
+plugins=(web-search command-not-found ssh-agent)
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
@@ -75,8 +75,7 @@ _load_settings "$HOME/.zsh/configs"
 
 DEFAULT_USER=vanclief
 
-eval `dircolors $HOME/.dircolors`
-
+eval $(gdircolors ~/.dircolors/dircolors.256dark)
 
 SAVEHIST=HISTSIZE=20000
 
@@ -85,22 +84,25 @@ ensure_tmux_is_running
 # Anaconda3 PATH
 export PATH="$PATH:$HOME/anaconda3/bin"
 
+# Fastlane PATH
+export PATH="$HOME/.fastlane/bin:$PATH"
+
 # GOPATH Export
 export GOPATH=/home/vanclief/go
 export PATH="$PATH:$GOPATH/bin"
 
 # Android studio
-export ANDROID_HOME=/home/vanclief/Android/Sdk
+export ANDROID_HOME=/Users/vanclief/Library/Android/sdk
 
 # Java PATH
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
-
-# Yarn
-export PATH="$PATH:$(yarn global bin)"
+export JAVA_HOME=`/usr/libexec/java_home`
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
+# Go
+export GOPATH="$HOME/Go"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting

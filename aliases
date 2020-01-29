@@ -69,6 +69,8 @@ alias lock="betterlockscreen -l"
 alias dclear='docker rm $(docker ps -aq)'
 alias k8='kubectl'
 alias term='urxvt &'
+alias pg_start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias pg_stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
 
 function gif(){
