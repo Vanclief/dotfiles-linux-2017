@@ -79,6 +79,7 @@ alias podkill='kubectl delete po -n $CLUSTER $POD --insecure-skip-tls-verify'
 alias podport='kubectl port-forward -n $CLUSTER $POD $PORT --insecure-skip-tls-verify'
 alias poddb='kubectl port-forward -n $CLUSTER $POD 5433:5432 --insecure-skip-tls-verify'
 alias podauth='kubectl port-forward -n $CLUSTER $POD 9001:9001 --insecure-skip-tls-verify'
+alias podnoti='kubectl port-forward -n $CLUSTER $POD 9002:9002 --insecure-skip-tls-verify'
 alias poderc='kubectl port-forward -n $CLUSTER $POD 9003:9003 --insecure-skip-tls-verify'
 alias podpay='kubectl port-forward -n $CLUSTER $POD 9004:9004 --insecure-skip-tls-verify'
 
