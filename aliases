@@ -77,6 +77,10 @@ alias podlist='kubectl get pods -n $CLUSTER --insecure-skip-tls-verify'
 alias podlogs='kubectl logs -fn $CLUSTER $POD --insecure-skip-tls-verify'
 alias podkill='kubectl delete po -n $CLUSTER $POD --insecure-skip-tls-verify'
 alias podport='kubectl port-forward -n $CLUSTER $POD $PORT --insecure-skip-tls-verify'
+alias poddb='kubectl port-forward -n $CLUSTER $POD 5433:5432 --insecure-skip-tls-verify'
+alias podauth='kubectl port-forward -n $CLUSTER $POD 9001:9001 --insecure-skip-tls-verify'
+alias poderc='kubectl port-forward -n $CLUSTER $POD 9003:9003 --insecure-skip-tls-verify'
+alias podpay='kubectl port-forward -n $CLUSTER $POD 9004:9004 --insecure-skip-tls-verify'
 
 function gif(){
   ffmpeg -i $1 -vf scale=$2:-1:flags=lanczos -f gif - | gifsicle --optimize=3
